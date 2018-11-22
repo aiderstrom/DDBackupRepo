@@ -1,0 +1,74 @@
+[
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "\"ntp.in_sync\".over(\"*\").last(2).count_by_status()",
+    "message": "Triggers if any host's clock goes out of sync with the time given by NTP. The offset threshold is configured in the Agent's `ntp.yaml` file.\n\nPlease read the [KB article](https://docs.datadoghq.com/agent/faq/network-time-protocol-ntp-offset-issues) on NTP Offset issues for more details on cause and resolution.",
+    "matching_downtimes": [],
+    "id": 7058086,
+    "multi": true,
+    "name": "[Auto] Clock in sync with NTP",
+    "created": "2018-11-12T10:40:11.000135+00:00",
+    "created_at": 1542019211000,
+    "creator": {
+      "id": 1013469,
+      "handle": "support-datadoginterviewprocess",
+      "name": "Datadog Support",
+      "email": "support-user-prod@datadoghq.com"
+    },
+    "org_id": 225063,
+    "modified": "2018-11-12T10:40:11.000135+00:00",
+    "overall_state_modified": "2018-11-12T11:10:53.411205+00:00",
+    "type": "service check",
+    "options": {
+      "thresholds": {
+        "warning": 1,
+        "ok": 1,
+        "critical": 1
+      },
+      "silenced": {}
+    }
+  },
+  {
+    "tags": [],
+    "deleted": null,
+    "query": "avg(last_5m):avg:system.proc.queue_length{host:HTPC} > 78",
+    "message": "@anders.iderstrom@gmail.com",
+    "matching_downtimes": [],
+    "id": 7137831,
+    "multi": false,
+    "name": "Process queue high",
+    "created": "2018-11-17T15:41:21.940305+00:00",
+    "created_at": 1542469281000,
+    "creator": {
+      "id": 1013470,
+      "handle": "anders.iderstrom@gmail.com",
+      "name": "Anders Iderström",
+      "email": "anders.iderstrom@gmail.com"
+    },
+    "org_id": 225063,
+    "modified": "2018-11-17T15:41:21.940305+00:00",
+    "overall_state_modified": "2018-11-17T21:21:57.125247+00:00",
+    "type": "query alert",
+    "options": {
+      "notify_audit": false,
+      "locked": false,
+      "timeout_h": 0,
+      "silenced": {},
+      "include_tags": false,
+      "no_data_timeframe": 10,
+      "require_full_window": true,
+      "new_host_delay": 300,
+      "notify_no_data": true,
+      "renotify_interval": 0,
+      "escalation_message": "",
+      "synthetics_check_id": null,
+      "thresholds": {
+        "critical": 78,
+        "warning": 32,
+        "warning_recovery": 28,
+        "critical_recovery": 60
+      }
+    }
+  }
+]
